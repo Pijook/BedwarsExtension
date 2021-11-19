@@ -1,0 +1,15 @@
+#Money for final kill
+finalKill: 8.0
+
+#Money for each bed destroyed
+bedDestroy: 13.0
+
+#Money for each minute in game
+minuteOfGame: 2.0
+
+#Money for top place in game
+top:
+  1: 45.0
+  2: 35.0
+  3: 25.0
+  4: 10.0

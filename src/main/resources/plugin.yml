@@ -1,0 +1,4 @@
+name: BedwarsExtension
+author: Pijok
+version: 1.0
+main: pl.pijok.bedwarsextension.BedwarsExtension
