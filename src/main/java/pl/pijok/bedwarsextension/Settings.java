@@ -9,7 +9,8 @@ public class Settings {
 
     public static double finalKill;
     public static double bedDestroy;
-    public static double minuteOfGame;
+    public static int timeInGame;
+    public static double rewardForTime;
     public static HashMap<Integer, Double> top = new HashMap<>();
 
     public static void load(){
@@ -18,7 +19,9 @@ public class Settings {
 
         finalKill = configuration.getDouble("finalKill");
         bedDestroy = configuration.getDouble("bedDestroy");
-        minuteOfGame = configuration.getDouble("minuteOfGame");
+
+        timeInGame = configuration.getInt("timeInGame.time");
+        rewardForTime = configuration.getDouble("timeInGame.reward");
 
         for(String placeString : configuration.getConfigurationSection("top").getKeys(false)){
             int place = Integer.parseInt(placeString);

@@ -2,6 +2,9 @@ package pl.pijok.bedwarsextension.lang;
 
 public enum Lang {
 
-    PREFIX
+    PREFIX,
+    BED_DESTROY,
+    TEAM_ELIMINATE,
+    TIME_REWARD
 
 }

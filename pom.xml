@@ -23,6 +23,11 @@
             <id>jitpack.io</id>
             <url>https://jitpack.io</url>
         </repository>
+
+        <repository>
+            <id>mbedwars-repo</id>
+            <url>https://repo.marcely.de/repository/maven-public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -40,15 +45,12 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Local dependencies -->
-
         <dependency>
             <groupId>de.marcely.bedwars</groupId>
             <artifactId>API</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${basedir}/lib/bedwars.jar</systemPath>
+            <version>5.0.3</version>
         </dependency>
+
     </dependencies>
 
 

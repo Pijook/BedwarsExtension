@@ -5,7 +5,9 @@ finalKill: 8.0
 bedDestroy: 13.0
 
 #Money for each minute in game
-minuteOfGame: 2.0
+timeInGame:
+  time: 60
+  reward: 2.0
 
 #Money for top place in game
 top:

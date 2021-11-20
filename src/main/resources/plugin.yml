@@ -2,3 +2,9 @@ name: BedwarsExtension
 author: Pijok
 version: 1.0
 main: pl.pijok.bedwarsextension.BedwarsExtension
+depend:
+  - MBedwars
+commands:
+  bedwarsextension:
+    usage: /bedwarsextension
+    aliases: [bwextension, bwe]

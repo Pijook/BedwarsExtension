@@ -3,6 +3,8 @@ package pl.pijok.bedwarsextension;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.pijok.bedwarsextension.SystematicReward.SystematicReward;
+import pl.pijok.bedwarsextension.commands.ExtensionCommand;
 import pl.pijok.bedwarsextension.essentials.ChatUtils;
 import pl.pijok.bedwarsextension.essentials.ConfigUtils;
 import pl.pijok.bedwarsextension.essentials.Debug;
@@ -24,8 +26,11 @@ public class BedWarsExtension extends JavaPlugin {
 
         verifyPlugins();
 
-        loadStuff(false);
+        Listeners.registerListeners(this);
 
+        registerCommands();
+
+        loadStuff(false);
     }
 
     @Override
@@ -33,17 +38,36 @@ public class BedWarsExtension extends JavaPlugin {
 
     }
 
-    public void loadStuff(boolean reload){
+    private void registerCommands(){
 
-        Debug.log("Loading " + this.getDescription().getName() + " by " + this.getDescription().getAuthors() + " version " + this.getDescription().getVersion());
+        getCommand("bedwarsextension").setExecutor(new ExtensionCommand());
 
-        Debug.log("Loading lang");
-        Language.load();
+    }
 
-        Debug.log("Loading settings");
-        Settings.load();
+    public boolean loadStuff(boolean reload){
+        try{
+            Debug.log("Loading " + this.getDescription().getName() + " by " + this.getDescription().getAuthors() + " version " + this.getDescription().getVersion());
 
-        Debug.log("&aLoaded!");
+            if(reload){
+                SystematicReward.stopTimer();
+            }
+
+            Debug.log("Loading lang");
+            Language.load();
+
+            Debug.log("Loading settings");
+            Settings.load();
+
+            Debug.log("Starting timer for rewards!");
+            SystematicReward.startTimer();
+
+            Debug.log("&aLoaded!");
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+        return true;
     }
 
     public void verifyPlugins(){

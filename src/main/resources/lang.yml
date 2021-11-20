@@ -1,2 +1,5 @@
 lang:
-  prefix: "&7[&cBedWars&7] "
+  PREFIX: "&7[&cBedWars&7] "
+  BED_DESTROY: "&aTwoja druzyna otrzymuje &e%money% &aza zniszczenie lozka druzyny &c%team%"
+  TEAM_ELIMINATE: "&aTwoja druzyna otrzymuje &e%money% &aza zajecie &e%place% &amiejsca!"
+  TIME_REWARD: "&aOtrzymujesz &e%money% &aza gre na serwerze!"
